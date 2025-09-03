@@ -1,14 +1,11 @@
 const users = [];
 
-// DOM elements
 const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 const loginBtn = document.getElementById("loginBtn");
 const signupBtn = document.getElementById("signupBtn");
 const showSignup = document.getElementById("showSignup");
 const showLogin = document.getElementById("showLogin");
-
-// Switch forms
 showSignup.addEventListener("click", () => {
   loginForm.classList.add("hidden");
   signupForm.classList.remove("hidden");
@@ -24,7 +21,7 @@ loginBtn.addEventListener("click", () => {
   let password = document.getElementById("loginPassword").value.trim();
 
   if(userInput === "" || password === "") {
-    alert("⚠️ Please enter your username/email and password.");
+    alert("Please enter your username/email and password.");
     return;
   }
 
@@ -33,14 +30,12 @@ loginBtn.addEventListener("click", () => {
   );
 
   if(found) {
-    alert(`✅ Welcome back, ${found.username}!`);
-    window.location.href = "quiz.html"; // connect to quiz
+    alert(`Welcome back, ${found.username}!`);
+    window.location.href = "quiz.html"; 
   } else {
-    alert("❌ Wrong username/email or password. Try again.");
+    alert("Wrong username/email or password. Try again.");
   }
 });
-
-// Signup function
 signupBtn.addEventListener("click", () => {
   let name = document.getElementById("signupName").value.trim();
   let username = document.getElementById("signupUser").value.trim();
@@ -48,20 +43,20 @@ signupBtn.addEventListener("click", () => {
   let password = document.getElementById("signupPassword").value.trim();
 
   if(name === "" || username === "" || email === "" || password === "") {
-    alert("⚠️ Please fill in all fields to sign up.");
+    alert("Please fill in all fields to sign up.");
     return;
   }
 
   let exists = users.find(u => u.email === email || u.username === username);
   if(exists) {
-    alert("⚠️ User already exists. Try logging in.");
+    alert("User already exists. Try logging in.");
     signupForm.classList.add("hidden");
     loginForm.classList.remove("hidden");
     return;
   }
 
   users.push({ name, username, email, password });
-  alert("✅ Account created! You can now log in.");
+  alert("Account created! You can now log in.");
   signupForm.classList.add("hidden");
   loginForm.classList.remove("hidden");
 });

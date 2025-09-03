@@ -1,44 +1,44 @@
 // ====== CONFIG ======
-const TIMER_SECONDS = 20; 
+const TIMER_SECONDS = 15; // change this to adjust per-question time
 
-// ====== QUESTION BANK (10 Questions per difficulty and  per subject) ======
+// ====== QUESTION BANK (10 per difficulty per subject) ======
 const quizData = {
   maths: {
     easy: [
       { q: "What is 2 + 2?", options: ["3","4","5","6"], answer: "4" },
-      { q: "What is 5 x 3?", options: ["15","20","10","8"], answer: "15" },
+      { q: "What is 5 × 3?", options: ["15","20","10","8"], answer: "15" },
       { q: "What is 10 - 6?", options: ["2","3","4","5"], answer: "4" },
       { q: "What is 12 ÷ 4?", options: ["2","3","4","5"], answer: "3" },
       { q: "Square root of 9?", options: ["2","3","4","5"], answer: "3" },
       { q: "What is 7 + 8?", options: ["14","15","16","13"], answer: "15" },
       { q: "What is 20 - 5?", options: ["10","12","15","25"], answer: "15" },
-      { q: "What is 6 x 6?", options: ["32","36","42","30"], answer: "36" },
+      { q: "What is 6 × 6?", options: ["32","36","42","30"], answer: "36" },
       { q: "What is 18 ÷ 2?", options: ["6","7","8","9"], answer: "9" },
-      { q: "What is 4 x 7?", options: ["21","24","28","30"], answer: "28" },
+      { q: "What is 4 × 7?", options: ["21","24","28","30"], answer: "28" },
     ],
     medium: [
-      { q: "What is 12 x 12?", options: ["124","144","164","122"], answer: "144" },
+      { q: "What is 12 × 12?", options: ["124","144","164","122"], answer: "144" },
       { q: "What is 100 ÷ 4?", options: ["20","25","30","40"], answer: "25" },
-      { q: "What is 15 x 15?", options: ["225","250","200","275"], answer: "225" },
+      { q: "What is 15²?", options: ["225","250","200","275"], answer: "225" },
       { q: "What is 30% of 200?", options: ["40","50","60","70"], answer: "60" },
-      { q: "What is cuberoot 7?", options: ["343","364","512","729"], answer: "343" },
-      { q: "Solve: 3x = 18 x=?", options: ["3","4","5","6"], answer: "6" },
+      { q: "What is 7³?", options: ["343","364","512","729"], answer: "343" },
+      { q: "Solve: 3x = 18. x=?", options: ["3","4","5","6"], answer: "6" },
       { q: "What is 81 ÷ 9?", options: ["8","9","10","12"], answer: "9" },
-      { q: "What is SqureRoot 144?", options: ["10","11","12","13"], answer: "12" },
+      { q: "What is √144?", options: ["10","11","12","13"], answer: "12" },
       { q: "What is 50% of 90?", options: ["40","45","50","60"], answer: "45" },
-      { q: "Solve: 2x + 4 = 10 x=?", options: ["2","3","4","5"], answer: "3" },
+      { q: "Solve: 2x + 4 = 10. x=?", options: ["2","3","4","5"], answer: "3" },
     ],
     hard: [
-      { q: "What is 13 x 17?", options: ["221","231","241","251"], answer: "221" },
+      { q: "What is 13 × 17?", options: ["221","231","241","251"], answer: "221" },
       { q: "What is 256 ÷ 16?", options: ["12","14","16","18"], answer: "16" },
-      { q: "What is 11x11 + 12x12?", options: ["265","244","221","233"], answer: "265" },
+      { q: "What is 11² + 12²?", options: ["265","244","221","233"], answer: "265" },
       { q: "Simplify: (3/4) ÷ (2/5)", options: ["15/8","8/15","6/20","5/6"], answer: "15/8" },
       { q: "Solve: 2x - 5 = 11. x=?", options: ["6","7","8","9"], answer: "8" },
-      { q: "What is the SqureRoot 225?", options: ["13","14","15","16"], answer: "15" },
-      { q: "What is 15 x 14?", options: ["200","210","220","225"], answer: "210" },
-      { q: "What is 2x2x2 x 3x3?", options: ["36","72","54","48"], answer: "72" },
+      { q: "What is √225?", options: ["13","14","15","16"], answer: "15" },
+      { q: "What is 15 × 14?", options: ["200","210","220","225"], answer: "210" },
+      { q: "What is 2³ × 3²?", options: ["36","72","54","48"], answer: "72" },
       { q: "What is 1/2 + 2/3?", options: ["7/6","5/6","4/5","3/5"], answer: "7/6" },
-      { q: "Solve: x*x = 49 x=?", options: ["5","6","7","8"], answer: "7" },
+      { q: "Solve: x² = 49. x=?", options: ["5","6","7","8"], answer: "7" },
     ],
   },
   english: {
@@ -48,7 +48,7 @@ const quizData = {
       { q: "Opposite of 'hot'?", options: ["Cold","Warm","Fire","Boil"], answer: "Cold" },
       { q: "Which is a verb?", options: ["Dog","Jump","Happy","Quick"], answer: "Jump" },
       { q: "Synonym of 'big'?", options: ["Tiny","Large","Small","Thin"], answer: "Large" },
-      { q: "Which word is an adjective?", options: ["Blue","Swim","Apple","Run"], answer: "swim" },
+      { q: "Which word is an adjective?", options: ["Blue","Swim","Apple","Run"], answer: "Blue" },
       { q: "Correct spelling?", options: ["Beautifull","Beutiful","Beautiful","Beatiful"], answer: "Beautiful" },
       { q: "Past tense of 'go'?", options: ["Goes","Gone","Went","Going"], answer: "Went" },
       { q: "Which is a pronoun?", options: ["He","House","Run","Play"], answer: "He" },
@@ -96,9 +96,9 @@ const quizData = {
       { q: "Largest country by area?", options: ["USA","Russia","Canada","China"], answer: "Russia" },
       { q: "Largest hot desert?", options: ["Sahara","Gobi","Kalahari","Arabian"], answer: "Sahara" },
       { q: "Great Wall is in?", options: ["India","China","Japan","Korea"], answer: "China" },
-      { q: "Ocean between Africa & Australia?", options: ["Atlantic","Pacific","Indian ocean","Arctic"], answer: "Indian ocean" },
+      { q: "Ocean between Africa & Australia?", options: ["Atlantic","Pacific","Indian","Arctic"], answer: "Indian" },
       { q: "Coldest continent?", options: ["Europe","Asia","Antarctica","North America"], answer: "Antarctica" },
-      { q: "Capital of Canada?", options: ["Toronto","Vancouver","Ottawa","Montreal"], answer: "Toronto" },
+      { q: "Capital of Canada?", options: ["Toronto","Vancouver","Ottawa","Montreal"], answer: "Ottawa" },
       { q: "River flowing through Egypt?", options: ["Amazon","Nile","Yangtze","Congo"], answer: "Nile" },
       { q: "Great Barrier Reef is in?", options: ["USA","Brazil","Australia","India"], answer: "Australia" },
       { q: "Tallest mountain?", options: ["K2","Everest","Kilimanjaro","Makalu"], answer: "Everest" },
@@ -118,6 +118,8 @@ const quizData = {
     ],
   }
 };
+
+// ====== STATE ======
 let subject = "";
 let difficulty = "";
 let questions = [];
@@ -127,6 +129,7 @@ let timer = null;
 let timeLeft = TIMER_SECONDS;
 let locked = false;
 
+// ====== FLOW ======
 function $(id) { return document.getElementById(id); }
 
 function selectSubject(s) {
@@ -137,13 +140,15 @@ function selectSubject(s) {
 
 function selectDifficulty(d) {
   difficulty = d;
-  questions = [...quizData[subject][difficulty]];
+  questions = [...quizData[subject][difficulty]]; // already 10 items
   index = 0;
   score = 0;
   $("difficulty-screen").classList.add("hidden");
   $("quiz-screen").classList.remove("hidden");
   renderQuestion();
 }
+
+// ====== RENDER ======
 function renderQuestion() {
   if (index >= questions.length) return finish();
 
@@ -166,6 +171,8 @@ function renderQuestion() {
 
   startTimer();
 }
+
+// ====== TIMER ======
 function startTimer() {
   clearInterval(timer);
   timeLeft = TIMER_SECONDS;
@@ -201,7 +208,7 @@ function handleAnswer(btn, selected, correct) {
   if (selected === correct) {
     score++;
     btn.classList.add("is-correct");
-    $("feedback").textContent = "Correct";
+    $("feedback").textContent = "Correct!";
     $("feedback").className = "correct";
   } else {
     $("feedback").textContent = `Wrong! Correct answer: ${correct}`;
@@ -220,7 +227,7 @@ function reveal(isCorrect, correct, timedOut=false) {
   const all = Array.from($("options").children);
   all.forEach(b => b.disabled = true);
   $("feedback").textContent = timedOut
-    ? ` Time up! Correct answer: ${correct}`
+    ? `Time up! Correct answer: ${correct}`
     : `Wrong! Correct answer: ${correct}`;
   $("feedback").className = "wrong answer";
   all.forEach(b => {
@@ -237,6 +244,8 @@ function next() {
     finish();
   }
 }
+
+// ====== END ======
 function finish() {
   clearInterval(timer);
   $("quiz-screen").classList.add("hidden");
