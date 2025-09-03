@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login/singnup form</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
-      <div class="card" id="authSection">
-    <h2>Login to access:</h2>
-    <input type="text" id="username" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-   <button onclick="window.location.href='quiz.html'">Login</button>
+    <div id="loginForm">
+      <h2 id="loginTitle">Login</h2>
+      <input type="text" id="loginEmail" placeholder="Email">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <div class="link" id="toSignup" onclick="showSignup()">Create account</div>
+    </div>
+
+    <!-- Signup -->
+    <div id="signupForm" class="hidden">
+      <h2 id="signupTitle">Sign Up</h2>
+      <input type="text" id="signupName" placeholder="Full Name">
+      <input type="text" id="signupEmail" placeholder="Email">
+      <input type="password" id="signupPassword" placeholder="Password">
+      <button id="signupBtn">Sign Up</button>
+      <div class="link" id="toLogin" onclick="showLogin()">Already have an account? Login</div>
+    </div>
   </div>
+
   <script src="loging.js"></script>
 </body>
 </html>

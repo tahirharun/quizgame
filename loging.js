@@ -1,17 +1,24 @@
-  function login() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
+   document.getElementById("loginTitle").innerText = t.loginTitle;
+      document.getElementById("loginEmail").placeholder = t.email;
+      document.getElementById("loginPassword").placeholder = t.password;
+      document.getElementById("loginBtn").innerText = t.loginBtn;
+      document.getElementById("toSignup").innerText = t.toSignup;
 
-      if(user && pass) {
-        document.getElementById("authSection").classList.add("hidden");
-        document.getElementById("subjectSection").classList.remove("hidden");
-      } else {
-        alert("Please enter both email and password.");
-      }
+      // Signup form
+      document.getElementById("signupTitle").innerText = t.signupTitle;
+      document.getElementById("signupName").placeholder = t.name;
+      document.getElementById("signupEmail").placeholder = t.email;
+      document.getElementById("signupPassword").placeholder = t.password;
+      document.getElementById("signupBtn").innerText = t.signupBtn;
+      document.getElementById("toLogin").innerText = t.toLogin;
+    
+
+    function showSignup() {
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("signupForm").classList.remove("hidden");
     }
 
-    function startQuiz(subject) {
-      document.getElementById("subjectSection").classList.add("hidden");
-      document.getElementById("quizSection").classList.remove("hidden");
-      document.getElementById("quizTitle").innerText = subject + " Quiz";
+    function showLogin() {
+      document.getElementById("signupForm").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
     }
