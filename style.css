@@ -38,12 +38,12 @@ button:disabled { opacity: .6; cursor: not-allowed; }
 
 #options button { text-align: left; }
 
-.correct { color: #16a34a; font-weight: 700; 
-}
-.wrong { color: #dc2626; font-weight: 700; 
-}
-.answer { color: #1d4ed8; font-style: italic; 
-}
+.correct { color: #16a34a; font-weight: 700; }
+.wrong { color: #dc2626; font-weight: 700; }
+.answer { color: #1d4ed8; font-style: italic; }
+
+.is-correct { background-color:green !important; color: #fff !important; }
+.is-wrong { background-color: red !important; color: #fff !important; }
 
 .hud {
   display: flex; 
