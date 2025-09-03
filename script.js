@@ -237,8 +237,6 @@ function next() {
     finish();
   }
 }
-
-// ====== END ======
 function finish() {
   clearInterval(timer);
   $("quiz-screen").classList.add("hidden");
