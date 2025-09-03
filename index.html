@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup/login form</title>
+</head>
+<body>
+    <!-- Login / Signup -->
+<section id="auth-screen">
+  <h2>Login or Signup</h2>
+  <button onclick="showAuthForm('login')">Login</button>
+  <button onclick="showAuthForm('signup')">Signup</button>
+
+  <div id="login-form" class="hidden">
+    <input id="login-username" type="text" placeholder="Username">
+    <input id="login-password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-error"></p>
+  </div>
+
+  <div id="signup-form" class="hidden">
+    <input id="signup-username" type="text" placeholder="Username">
+    <input id="signup-password" type="password" placeholder="Password">
+    <button onclick="signup()">Signup</button>
+    <p id="signup-error"></p>
+  </div>
+</section>
+
+</body>
+</html>
