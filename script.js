@@ -118,8 +118,6 @@ const quizData = {
     ],
   }
 };
-
-// ====== STATE ======
 let subject = "";
 let difficulty = "";
 let questions = [];
@@ -129,7 +127,6 @@ let timer = null;
 let timeLeft = TIMER_SECONDS;
 let locked = false;
 
-// ====== FLOW ======
 function $(id) { return document.getElementById(id); }
 
 function selectSubject(s) {
@@ -147,8 +144,6 @@ function selectDifficulty(d) {
   $("quiz-screen").classList.remove("hidden");
   renderQuestion();
 }
-
-// ====== RENDER ======
 function renderQuestion() {
   if (index >= questions.length) return finish();
 
@@ -171,8 +166,6 @@ function renderQuestion() {
 
   startTimer();
 }
-
-// ====== TIMER ======
 function startTimer() {
   clearInterval(timer);
   timeLeft = TIMER_SECONDS;
@@ -208,7 +201,7 @@ function handleAnswer(btn, selected, correct) {
   if (selected === correct) {
     score++;
     btn.classList.add("is-correct");
-    $("feedback").textContent = "Correct!";
+    $("feedback").textContent = "Correct";
     $("feedback").className = "correct";
   } else {
     $("feedback").textContent = `Wrong! Correct answer: ${correct}`;
