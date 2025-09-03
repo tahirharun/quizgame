@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>login/singup fprm</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loginForm">
-      <h2 id="loginTitle">Login</h2>
+   <div id="loginForm">
+      <h2>Login</h2>
       <input type="text" id="loginEmail" placeholder="Email">
       <input type="password" id="loginPassword" placeholder="Password">
-      <button id="loginBtn">Login</button>
-      <div class="link" id="toSignup" onclick="showSignup()">Create account</div>
+      <button onclick="login()">Login</button>
+      <div class="link" onclick="showSignup()">Create account</div>
     </div>
 
-    <!-- Signup -->
+    <!-- Signup Form -->
     <div id="signupForm" class="hidden">
-      <h2 id="signupTitle">Sign Up</h2>
+      <h2>Sign Up</h2>
       <input type="text" id="signupName" placeholder="Full Name">
       <input type="text" id="signupEmail" placeholder="Email">
       <input type="password" id="signupPassword" placeholder="Password">
-      <button id="signupBtn">Sign Up</button>
-      <div class="link" id="toLogin" onclick="showLogin()">Already have an account? Login</div>
+      <button onclick="signup()">Sign Up</button>
+      <div class="link" onclick="showLogin()">Already have an account? Login</div>
     </div>
-  </div>
 
-  <script src="loging.js"></script>
+    <script src="loging.js"></script>
 </body>
 </html>
