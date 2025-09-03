@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Time</h1>
+    <section id="subject-screen">
+      <h2>Select Subject</h2>
+      <button onclick="selectSubject('maths')">Maths</button>
+      <button onclick="selectSubject('english')">English</button>
+      <button onclick="selectSubject('geography')">Geography</button>
+    </section>
+    <section id="difficulty-screen" class="hidden">
+      <h2>Select Difficulty</h2>
+      <button onclick="selectDifficulty('easy')">Easy</button>
+      <button onclick="selectDifficulty('medium')">Medium</button>
+      <button onclick="selectDifficulty('hard')">Hard</button>
+    </section>
+    <section id="quiz-screen" class="hidden">
+      <div class="hud">
+        <div class="timer">
+          <span id="time-left">20</span>
+          <div class="bar"><div id="time-fill"></div></div>
+        </div>
+        <div id="q-count"></div>
+      </div>
+
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <p id="feedback"></p>
+    </section>
+    <section id="result-screen" class="hidden">
+      <h2>Quiz Complete!</h2>
+      <p id="score"></p>
+      <button onclick="restart()">Play Again</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
