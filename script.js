@@ -1,4 +1,4 @@
-const TIMER_SECONDS = 15;
+const TIMER_SECONDS = 30;
 
 const quizData = {
   maths: {

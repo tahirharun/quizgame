@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singup/login form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMail - Custom Email</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Login / Signup -->
-<section id="auth-screen">
-  <h2>Login or Signup</h2>
-  <button onclick="showAuthForm('login')">Login</button>
-  <button onclick="showAuthForm('signup')">Signup</button>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>MyMail</h2>
+      <button onclick="composeEmail()">Compose</button>
+      <nav>
+        <ul>
+          <li onclick="showFolder('inbox')">Inbox</li>
+          <li onclick="showFolder('sent')">Sent</li>
+          <li onclick="showFolder('drafts')">Drafts</li>
+        </ul>
+      </nav>
+    </aside>
 
-  <div id="login-form" class="hidden">
-    <input id="login-username" type="text" placeholder="Username">
-    <input id="login-password" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-    <p id="login-error"></p>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Compose Email -->
+      <section id="compose-section" class="hidden">
+        <h3>Compose Email</h3>
+        <input id="to" type="text" placeholder="To">
+        <input id="subject" type="text" placeholder="Subject">
+        <textarea id="body" placeholder="Write your email..."></textarea>
+        <button onclick="sendEmail()">Send</button>
+      </section>
+
+      <!-- Folder Emails -->
+      <section id="emails-section">
+        <h3 id="folder-title">Inbox</h3>
+        <ul id="email-list"></ul>
+      </section>
+    </main>
   </div>
 
-  <div id="signup-form" class="hidden">
-    <input id="signup-username" type="text" placeholder="Username">
-    <input id="signup-password" type="password" placeholder="Password">
-    <button onclick="signup()">Signup</button>
-    <p id="signup-error"></p>
-  </div>
-</section>
-
+  <script src="script.js"></script>
 </body>
 </html>
