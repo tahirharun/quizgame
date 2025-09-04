@@ -2,12 +2,16 @@
 function checkLogin() {
   let user = localStorage.getItem("currentUser");
   if (!user) {
-    // Not logged in → back to login page
     window.location.href = "index.html";
   } else {
     document.getElementById("welcome").innerText = "Welcome, " + user + "!";
     loadQuestion();
   }
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "index.html";
 }
 
 // ----------------- QUIZ -----------------
@@ -18,8 +22,8 @@ const questions = [
     answer: "4"
   },
   {
-    question: "What is the capital of Kenya?",
-    options: ["Nairobi", "Mombasa", "Kisumu", "Eldoret"],
+    question: "Capital of Kenya?",
+    options: ["Mombasa", "Nairobi", "Kisumu", "Eldoret"],
     answer: "Nairobi"
   }
 ];
@@ -48,8 +52,6 @@ function loadQuestion() {
 
 function checkAnswer(button, selected) {
   let q = questions[currentQuestion];
-
-  // Disable all buttons after answering
   document.querySelectorAll(".option-btn").forEach(btn => btn.disabled = true);
 
   if (selected === q.answer) {
@@ -57,7 +59,6 @@ function checkAnswer(button, selected) {
     score++;
   } else {
     button.style.backgroundColor = "red";
-    // Highlight correct answer
     document.querySelectorAll(".option-btn").forEach(btn => {
       if (btn.textContent === q.answer) {
         btn.style.backgroundColor = "green";

@@ -16,8 +16,11 @@ function signup() {
   users[u] = p;
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert("Signup successful! Please login.");
-  show("login-screen");
+  // ✅ Save new user as logged in
+  localStorage.setItem("currentUser", u);
+
+  // ⬇️ Redirect straight to quiz
+  window.location.href = "quiz.html";
 }
 
 function login() {
@@ -30,7 +33,7 @@ function login() {
     // ✅ Save logged-in user
     localStorage.setItem("currentUser", u);
 
-    // Redirect to quiz page
+    // ⬇️ Redirect straight to quiz
     window.location.href = "quiz.html";
   } else {
     alert("Invalid username or password!");
