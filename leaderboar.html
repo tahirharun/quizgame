@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Game</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="leaderboard.css">
 </head>
-<body onload="checkLogin()">
+<body onload="showLeaderboard()">
   <div class="container">
-    <h2 id="welcome"></h2>
-    <div id="question"></div>
-    <div id="options"></div>
-    <button id="next-btn" onclick="nextQuestion()">Next</button>
-    <button onclick="logout()">Logout</button>
-    
-    <!-- Leaderboard will appear here -->
-    <div id="leaderboard" class="hidden"></div>
+    <h2>Leaderboard</h2>
+
+    <div id="maths-board" class="board"></div>
+    <div id="english-board" class="board"></div>
+    <div id="geography-board" class="board"></div>
+
+    <a href="quiz.html"><button>Back to Quiz</button></a>
   </div>
 
   <script src="leaderboard.js"></script>
