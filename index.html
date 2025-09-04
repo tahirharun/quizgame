@@ -3,43 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyMail - Custom Email</title>
+  <title>Login & Signup</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>MyMail</h2>
-      <button onclick="composeEmail()">Compose</button>
-      <nav>
-        <ul>
-          <li onclick="showFolder('inbox')">Inbox</li>
-          <li onclick="showFolder('sent')">Sent</li>
-          <li onclick="showFolder('drafts')">Drafts</li>
-        </ul>
-      </nav>
-    </aside>
+  <div class="container">
+    <!-- Login -->
+    <section id="login-screen">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username">
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a onclick="show('signup-screen')">Sign up</a></p>
+    </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Compose Email -->
-      <section id="compose-section" class="hidden">
-        <h3>Compose Email</h3>
-        <input id="to" type="text" placeholder="To">
-        <input id="subject" type="text" placeholder="Subject">
-        <textarea id="body" placeholder="Write your email..."></textarea>
-        <button onclick="sendEmail()">Send</button>
-      </section>
-
-      <!-- Folder Emails -->
-      <section id="emails-section">
-        <h3 id="folder-title">Inbox</h3>
-        <ul id="email-list"></ul>
-      </section>
-    </main>
+    <!-- Signup -->
+    <section id="signup-screen" class="hidden">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Choose a username">
+      <input type="password" id="signup-password" placeholder="Choose a password">
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a onclick="show('login-screen')">Login</a></p>
+    </section>
   </div>
 
-  <script src="script.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

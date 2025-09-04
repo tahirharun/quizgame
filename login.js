@@ -1,42 +1,38 @@
-// ====== AUTH ======
-let currentUser = null;
-
-function showAuthForm(type){
-  document.getElementById("login-form").classList.add("hidden");
-  document.getElementById("signup-form").classList.add("hidden");
-  if(type === "login") document.getElementById("login-form").classList.remove("hidden");
-  if(type === "signup") document.getElementById("signup-form").classList.remove("hidden");
+function show(id) {
+  document.getElementById("login-screen").classList.add("hidden");
+  document.getElementById("signup-screen").classList.add("hidden");
+  document.getElementById(id).classList.remove("hidden");
 }
 
-function signup(){
-  const username = document.getElementById("signup-username").value.trim();
-  const password = document.getElementById("signup-password").value.trim();
-  if(!username || !password){
-    document.getElementById("signup-error").textContent = "Fill in all fields";
-    return;
-  }
-  if(localStorage.getItem("user_" + username)){
-    document.getElementById("signup-error").textContent = "Username already exists";
-    return;
-  }
-  localStorage.setItem("user_" + username, password);
-  currentUser = username;
-  startAfterLogin();
+function signup() {
+  const u = document.getElementById("signup-username").value.trim();
+  const p = document.getElementById("signup-password").value.trim();
+
+  if (!u || !p) return alert("Enter username and password!");
+
+  let users = JSON.parse(localStorage.getItem("users") || "{}");
+  if (users[u]) return alert("Username already exists!");
+
+  users[u] = p;
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Signup successful! Please login.");
+  show("login-screen");
 }
 
-function login(){
-  const username = document.getElementById("login-username").value.trim();
-  const password = document.getElementById("login-password").value.trim();
-  const stored = localStorage.getItem("user_" + username);
-  if(stored && stored === password){
-    currentUser = username;
-    startAfterLogin();
+function login() {
+  const u = document.getElementById("login-username").value.trim();
+  const p = document.getElementById("login-password").value.trim();
+
+  let users = JSON.parse(localStorage.getItem("users") || "{}");
+
+  if (users[u] && users[u] === p) {
+    // ✅ Save logged-in user
+    localStorage.setItem("currentUser", u);
+
+    // Redirect to quiz page
+    window.location.href = "quiz.html";
   } else {
-    document.getElementById("login-error").textContent = "Invalid username or password";
+    alert("Invalid username or password!");
   }
-}
-
-function startAfterLogin(){
-  show("subject-screen");
-  document.querySelector(".container h1").textContent = `Welcome, ${currentUser}! Choose Subject`;
 }
