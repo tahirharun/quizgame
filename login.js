@@ -16,10 +16,10 @@ function signup() {
   users[u] = p;
   localStorage.setItem("users", JSON.stringify(users));
 
-  // ✅ Save new user as logged in
+ 
   localStorage.setItem("currentUser", u);
 
-  // ⬇️ Redirect straight to quiz
+
   window.location.href = "quiz.html";
 }
 
@@ -30,10 +30,10 @@ function login() {
   let users = JSON.parse(localStorage.getItem("users") || "{}");
 
   if (users[u] && users[u] === p) {
-    // ✅ Save logged-in user
+    
     localStorage.setItem("currentUser", u);
 
-    // ⬇️ Redirect straight to quiz
+   
     window.location.href = "quiz.html";
   } else {
     alert("Invalid username or password!");
