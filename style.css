@@ -63,21 +63,8 @@ button:disabled { opacity: .6; cursor: not-allowed; }
   transition: width .1s linear;
 }
 
-.hidden { display: none; }
-
-#leaderboard {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  background: #f9fafb;
-  text-align: left;
-}
-
-#leaderboard h3 {
-  margin-bottom: 10px;
-  color: #111827;
-}
-
-#leaderboard ol {
-  padding-left: 20px;
+#leaderboard li {
+  font-weight: bold;
+  background-color: black;
+  color: white;
 }
