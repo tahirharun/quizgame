@@ -199,5 +199,44 @@ function revealTimeUp(){
 }
 
 function next(){ index++; loadQuestion(); }
-function showResult(){ show("result-screen"); $("score").textContent=`Your score: ${score} / ${questions.length}`; }
-function restart(){ subject=""; difficulty=""; questions=[]; index=0; score=0; show("subject-screen"); }
+
+// ====== RESULT & LEADERBOARD ======
+function showResult(){
+  show("result-screen");
+  $("score").textContent = `Your score: ${score} / ${questions.length}`;
+  saveScore();
+  showLeaderboard();
+}
+
+function restart(){
+  subject=""; difficulty=""; questions=[]; index=0; score=0; show("subject-screen");
+}
+
+function saveScore(){
+  let user = localStorage.getItem("currentUser");
+  if(!user) return;
+
+  let key = `leaderboard-${subject}-${difficulty}`;
+  let leaderboard = JSON.parse(localStorage.getItem(key)) || [];
+  leaderboard.push({ user, score });
+  leaderboard.sort((a,b) => b.score - a.score);
+  if(leaderboard.length > 5) leaderboard = leaderboard.slice(0,5);
+  localStorage.setItem(key, JSON.stringify(leaderboard));
+}
+
+function showLeaderboard(){
+  let key = `leaderboard-${subject}-${difficulty}`;
+  let leaderboard = JSON.parse(localStorage.getItem(key)) || [];
+  let html = "<h3>Leaderboard (Top 5)</h3><ol>";
+  leaderboard.forEach(entry => {
+    html += `<li>${entry.user}: ${entry.score}</li>`;
+  });
+  html += "</ol>";
+  $("leaderboard").innerHTML = html;
+}
+
+// ====== SET CURRENT USER ======
+let user = prompt("Enter your name:");
+if(user) {
+  localStorage.setItem("currentUser", user);
+}
