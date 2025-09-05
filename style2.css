@@ -53,3 +53,9 @@ button:hover { background: #2563eb; }
   cursor: pointer;
   background: #eee;
 }
+ a {
+  cursor: pointer;
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+}
