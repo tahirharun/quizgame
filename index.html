@@ -8,7 +8,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Login -->
     <section id="login-screen">
       <h2>Login</h2>
       <input type="text" id="login-username" placeholder="Username">
@@ -16,12 +15,10 @@
       <button onclick="login()">Login</button>
       <p>Don't have an account? <a onclick="show('signup-screen')">Sign up</a></p>
     </section>
-
-    <!-- Signup -->
     <section id="signup-screen" class="hidden">
       <h2>Sign Up</h2>
-      <input type="text" id="signup-username" placeholder="Choose a username">
-      <input type="password" id="signup-password" placeholder="Choose a password">
+      <input type="text" id="signup-username" placeholder="please enter your username">
+      <input type="password" id="signup-password" placeholder="please enter your password">
       <button onclick="signup()">Sign Up</button>
       <p>Already have an account? <a onclick="show('login-screen')">Login</a></p>
     </section>

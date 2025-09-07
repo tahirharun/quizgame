@@ -9,24 +9,18 @@
 <body>
   <div class="container">
     <h1>Quiz Game</h1>
-
-    <!-- Subject -->
     <section id="subject-screen">
       <h2>Select Subject</h2>
       <button onclick="selectSubject('maths')">Maths</button>
       <button onclick="selectSubject('english')">English</button>
       <button onclick="selectSubject('geography')">Geography</button>
     </section>
-
-    <!-- Difficulty -->
     <section id="difficulty-screen" class="hidden">
       <h2>Select Difficulty</h2>
       <button onclick="selectDifficulty('easy')">Easy</button>
       <button onclick="selectDifficulty('medium')">Medium</button>
       <button onclick="selectDifficulty('hard')">Hard</button>
     </section>
-
-    <!-- Quiz -->
     <section id="quiz-screen" class="hidden">
       <div class="hud">
         <div class="timer">
@@ -40,8 +34,6 @@
       <div id="options"></div>
       <p id="feedback"></p>
     </section>
-
-    <!-- Result -->
     <section id="result-screen" class="hidden">
       <h2>Quiz Complete!</h2>
       <p id="score"></p>
@@ -49,7 +41,6 @@
       <button onclick="restart()">Play Again</button>
     </section>
   </div>
-
-  <script src="script.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>
